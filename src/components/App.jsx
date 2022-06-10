@@ -1,42 +1,66 @@
-import LightModeIcon from '@mui/icons-material/LightMode';
+import { useEffect, useState } from 'react';
+import Footer from './Footer';
+import Form from './Form';
+import Header from './Header';
+import Tasks from './Tasks';
+// import bgDesktopLight from "../bg-desktop-light.jpg"
 
-function App(){
-    return <div class="container">
-        <div class="header"><h1>TODO</h1>
-        <button><LightModeIcon fontSize="inherit" color="inherit" /></button></div>
-        <form>
-            <button><div></div></button>
-            <input type="text" placeholder="Create a new todo..." />       
-        </form>
-        <main>
-            <div id="1">
-                <button><div class="check">✔</div></button>
-                <h3 class="checked">Task 1</h3>
-                <button class="delete">✖</button>
-            </div>
-            <div id="2">
-                <button><div class="check">✔</div></button>
-                <h3 class="checked">Task 2</h3>
-                <button class="delete">✖</button>
-            </div>
-            <div id="3">
-                <button><div></div></button>
-                <h3>Task 3</h3>
-                <button class="delete">✖</button>
-            </div>
-            <div id="3">
-                <button><div></div></button>
-                <h3>Task 4</h3>
-                <button class="delete">✖</button>
-            </div>            
-            <div class="bottom">
-            <span>x items completed </span>
-            <span class="filter"><span class="filter-option">All</span><span class="filter-option">Active</span><span class="filter-option">completed</span></span>
-            <span class="filter-option"> Clear completed</span>                
-            </div>
-        </main>
-        <div class="footer">Drag and drop to reorder list</div>
-        
+function App({bodyNode}){   
+    const [tasks,setTasks] = useState([]);
+    const [mode, setMode] = useState(true)
+    
+    const [newTasks, setNewtasks] = useState(tasks)    
+
+    useEffect(()=>{
+        setNewtasks(tasks)
+    }, [setNewtasks, tasks])
+
+
+    function updateTasks(task, uuid){        
+            setTasks([...tasks,{clicked:false, text:task, id:uuid}]);                  
+    }
+
+    function switchMode(){
+        setMode(!mode)
+    }
+
+    function updateClick(uid){
+        setTasks((oldTasks)=>{
+          return oldTasks.reduce((cummulative, task)=>{
+            task.id === uid ? cummulative.push({clicked: !task.clicked, text: task.text, id: task.id}) : cummulative.push(task)
+            return cummulative
+          },[])
+        })
+    }
+
+    function deleteTask( uid ){
+        setTasks ((oldTasks)=>oldTasks.filter(itm => uid !== itm.id));
+     }
+
+    function refactorWdragEnter(dragItem, target){
+        setTasks(oldTasks=>{
+            let newList = JSON.parse(JSON.stringify(oldTasks));
+            const spliced = newList[dragItem]
+            newList.splice(dragItem, 1)
+            newList.splice(target, 0, spliced)           
+            return newList;
+        })
+    }
+    
+    function clearCompleted(){
+        setTasks(oldTasks=>oldTasks.filter(task=>task.clicked === false))
+    }
+ 
+    
+    return <div className="body" >       
+        <div className="container">        
+            <Header switchMode={switchMode} mode={mode} bodyNode={bodyNode} />
+            <Form updateTasks={updateTasks} mode={mode} />
+            <Tasks {...{tasks:tasks, mode:mode, newTasks:newTasks, refactorWdragEnter:refactorWdragEnter,
+                        deleteTask:deleteTask, updateClick:updateClick, clearCompleted:clearCompleted
+                    }} />     
+            <Footer mode={mode} />
+        </div>
     </div>
 }
 

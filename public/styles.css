@@ -1,150 +1,429 @@
-body{   
-    background: url(./images/bg-desktop-dark.jpg) #181824;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    color: #fff;
+html{
+    box-sizing: border-box;    
+}
+body{
+    margin: 0;
+    min-height: fit-content;
+        
 }
 #root{
-    display: flex;
-    justify-content: center;
+    width: inherit;
+    height: 100vh;
 }
 .container{
-    width: 45vw;
-    margin-top: 8vh;
+    width: 45rem;
+    margin-top: 5.5vh;
     font-family: 'Josefin Sans', sans-serif;
+    
 }
-.container button{
-    background-color: inherit;
-    border: none;
-    font-size: 2.5rem;
-    color: #fff;
-    cursor: pointer;
-}
+
 h1{    
     font-weight: 700;
     letter-spacing: 1rem;
     font-size: 3rem;
+    
 }
 h3{
     font-weight: 400;
     display: inline-block;
 }
+
 .header{
     display: flex;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 2vh;
+}
+.header div{  
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    line-height: 0.5;
+    transform: rotate(-40deg);
+}
+.header div:hover{
+    opacity: 0.8;
 }
 form{
     height: 8vh;
     display: flex;
     flex-flow: row nowrap;
-    align-items: center;
-    background-color: #2d2f44;
-    border-radius: 2% / 3.8%;
-    margin-bottom: 4vh;
+    align-items: center;    
+    border-radius: 0.5rem;
+    margin-bottom: 2.5vh;
 }
 
-form button, main div button{
-    background-color: #2d2f44;
+form button, li button{
+    background-color: inherit;
     border: none;
     margin: auto 2% auto 3.5%;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: inherit;
 }
-form button div, main div button div{
+.submit, .check-box{
     display: inline-block;
     width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-    border: 1px solid rgba(120,122,143,0.5);
+    height: 1.5rem;    
     font-size: 1rem;
     color: white;
     cursor: pointer;
 }
 form input{
     width: 85%;
-    height: 6vh;
+    /* height: 6vh; */
     outline: none;
     border: none;
-    background-color: #2d2f44;
+    background-color: inherit;
     font-size: 1.4rem;
-    font-weight: 400;
-    color: #b7b9d2;
+    font-weight: 400;    
     font-family: 'Josefin Sans', sans-serif;
     caret-color: hsl(220, 98%, 61%);
 }
-form input::placeholder{
-    color: #787a8f;
+.main{    
+    margin-bottom: 9.5vh;
+    border-radius: 0.6rem;
 }
-main{
-    background-color: rgba(120,122,143,0.5);
-    border-radius: 50% 50% 0 0 / 20% 30% 0 0;
-    margin-bottom: 7vh;
+ul{
+    padding: 0;
+    list-style-type: none;
+    margin-bottom: 0;
+    display: flex;
+    flex-flow: column nowrap; 
 }
-main div{
+li{
     height: 8vh;
     display: flex;
     flex-flow: row nowrap;
-    align-items: center;
-    background-color: #2d2f44;
-    margin-bottom: 0.1vh;
+    align-items: center;    
+    border-bottom: 1px solid rgba(120,122,143,0.25); 
 }
-main div .delete{
-    width: 1.2rem;
+li:first-of-type{
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
+}
+.delete{
+    width: 2rem;
     height: 1.5rem;
-    font-size: 1.8rem;
-    opacity: 0.25;
+    font-size: 1.8rem;    
     color: #787a8f;
-    cursor: pointer;    
-    visibility: visible;
+    cursor: pointer;   
 }
-
-main div .checked{
-    text-decoration: line-through;
-    color: rgba(120,122,143,0.5);
-}
-main div button div:hover{    
-    border: double 1px transparent;
-    background-image: linear-gradient(#2d2f44, #2d2f44), radial-gradient(circle at top left,  hsl(192, 100%, 67%),hsl(280, 87%, 65%));
-    background-origin: border-box;
-    background-clip: content-box, border-box;   
-}
-main div button .check{
-    background-image: radial-gradient(circle at top left,  hsl(192, 100%, 67%),hsl(280, 87%, 65%));
-}
-main div h3{
+li h3{
     width: 85%;
-    background-color: #2d2f44;
+    background-color: inherit;
     font-size: 1.4rem;
-    font-weight: 400;
-    color: rgba(189,191,216,1);
+    font-weight: 400;    
     font-family: 'Josefin Sans', sans-serif;
 }
-main .bottom{
+.bottom{
     height: 6vh;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-between;
     padding: 0 2vw;
     color: rgba(120,122,143,0.95);
+    align-items: center;
+    border-bottom-left-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
+    position: relative;
 }
 .filter-option:hover{
     color: rgba(189,191,216,1);
 }
 .filter{
     display: flex;
-    width: 30%;
+    width: 12.1rem;
     flex-flow: row nowrap;
     justify-content: space-between;
+    font-weight: 550;
 }
-.filter-option:first-child{
+.active-filter-option{
     color: hsl(220, 98%, 61%);
+    cursor: pointer;
 }
 .filter-option{
     cursor: pointer;
 }
 .footer{
     text-align: center;
+    padding-bottom: 7vh;
+}
+
+/* Mode */
+.html-dark{
+    background: url(./images/bg-desktop-dark.jpg) #181824;
+    background-size: 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.html-light{
+    background:  url(./images/bg-desktop-light.jpg) rgba(255,255,255,0.2);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+/* #root{
+    background: url(./images/bg-desktop-light.jpg);
+    background-size: 130rem;
+    background-position: top center;
+    background-repeat: no-repeat;
+} */
+/* .body-dark{
+
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    width: inherit;
+    height: 100vh;
+} */
+/* .body img{
+    width: 100%;
+    height: 45vh;
+    position: absolute;
+    z-index: -1;
+}
+.img-container{
+    width: inherit;
+    
+} */
+.body{ 
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    width: inherit;
+    height: 100vh;
+}
+.check-box-dark, .submit-dark{
+    border-radius: 50%;
+    border: 1px solid rgba(120,122,143,0.5);
+}
+.check-box-light, .submit-light{
+    border-radius: 50%;
+    border: 1px solid rgba(120,122,143,0.25);
+}
+.check-box-dark:hover, .submit-dark:hover{    
+    border: double 1px transparent;
+    background-image: linear-gradient(#2d2f44, #2d2f44), radial-gradient(circle at top left,  hsl(192, 100%, 67%),hsl(280, 87%, 65%));
+    background-origin: border-box;
+    background-clip: content-box, border-box;   
+}
+.check-box-light:hover, .submit-light:hover{    
+    border: double 1px transparent;
+    background-image: linear-gradient(#fff, #fff), radial-gradient(circle at top left,  hsl(192, 100%, 67%),hsl(280, 87%, 65%));
+    background-origin: border-box;
+    background-clip: content-box, border-box;   
+}
+.form-dark, .bottom-dark, .taskblock-dark{
+    background-color: #2d2f44;
+}
+.form-light, .bottom-light, .taskblock-light{
+    background-color: #fff
+}
+.form-light{
+    box-shadow: 0.2vw 2vh 40px rgba(0, 0, 0, 0.09);
+}
+.main-light{
+    background-color: rgba(120,122,143,0.25);
+    box-shadow: 0.2vw 2vh 40px rgba(0, 0, 0, 0.09) ;
+}
+.main-dark{
+    background-color: rgba(120,122,143,0.5);
+}
+.h3-light{
+    color: rgba(66,65,73,255);
+}
+.h3-dark{
+    color:  hsl(234, 39%, 85%)
+}
+.form-input-dark::placeholder{
+    color: rgba(120,122,143,1);
+}
+.form-input-light::placeholder{
+    color: rgba(120,122,143,0.65);
+}
+.form-input-dark{
+    color: #b7b9d2;
+}
+.form-input-light{
+    color: rgba(66,65,73,255);
+}
+.dragged-light, .dragged-dark{
+    background-color: inherit;
+}
+.dragged-h3-light{
+    color: rgba(120,122,143,0.25);
+}
+.dragged-h3-dark{
+    color: rgba(120,122,143,0.5);
+}
+.dragged-check-box{
+    border: none;    
+}
+
+/* media-query section */
+/* @media screen and (max-width: 1590px) {
+    .filter{
+        width: 33%;
+    }
+}
+@media screen and (max-width: 1440px) {
+    .container{
+        width: 60vw;
+    }
+    .filter{
+        width:35%;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .container{
+        width: 70vw;
+    }
+    h1{
+        margin: 2vh 0;
+    }
+}
+@media screen and (max-width: 1024px) {
+    h1{
+        font-size: 2.5rem;
+        margin: 1.2vh 0;
+        font-weight: 600;
+    }
+}*/
+ @media screen and (max-width: 950px) {
+    
+    h1{
+        font-size: 2.5rem;
+    }    
+    .header div{
+        font-size: 2.0833rem;
+    }
+    .container{
+        width: 80vw;
+    }
+    li{
+        margin-bottom: 0;
+        border-bottom: 1px solid rgba(120,122,143,0.25);
+    }
+} 
+@media screen and (max-width: 750px) {
+    h1{
+        margin: 2vh 0;
+    }
+} 
+@media screen and (max-width: 650px) {
+    .html-dark{
+        background: url(./images/bg-mobile-dark.jpg) #181824;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .html-light{
+        background: url(./images/bg-mobile-light.jpg) rgba(255,255,255,0.2);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .container{
+        width: 87vw;
+    }
+    h1{
+        margin: 3vh 0;
+    }
+    .filter{
+        position: absolute;
+        transform:translateY(5rem) ;
+        border-radius: 0.5rem;
+        width: 87vw;        
+        height: 3.5rem;
+        align-items: center;
+        justify-content: space-between;
+        background-color: inherit;
+        box-shadow: 0.2vw 2vh 60px rgba(0, 0, 0, 0.09) ;
+    }
+    #All{
+        margin-left: 18vw;        
+    }
+    #Completed{
+        margin-right: 18vw;
+    }    
+    .footer{
+        margin-top: 8rem;
+    }
+    .bottom span:first-of-type, .bottom span:last-of-type{
+        margin: auto 5vw;
+    }
+    form, li{
+        height: 7.2vh;
+    }
+    .bottom{
+        height: 7vh;
+        padding: 0;
+    }
+    form input{
+        font-size: 1.2rem;
+    }
+    li h3{
+        font-size: 1.2rem;
+    }
+    .submit, .check-box{
+        width: 1.3rem;
+        height: 1.3rem;
+        font-size: 0.8rem;
+    }
+}
+/* @media screen and (max-width: 560px) {
+    h1{
+        margin: 3vh 0;
+    }
+    form input{
+        font-size: 1.1rem;        
+    }
+    li h3{
+        font-size: 1.2rem;
+    }
+    form, li{
+        height: 7vh;
+    }
+    .bottom{
+        height: 7vh;
+    }
+
+} */
+@media screen and (max-width: 480px) {
+    h1{
+        margin: 2vh 0;
+        font-size: 2rem;
+    }
+    .header div{
+        font-size: 1.667rem;
+    }
+    form input{
+        font-size: 1rem;        
+    }
+    li h3{
+        font-size: 1rem;
+    }
+    .bottom span:first-of-type, .bottom span:last-of-type{
+        font-size: 0.8rem;
+    }
+}
+@media screen and (max-width: 375px) {
+    form, li{
+        height: 6vh;
+    }
+    .bottom{
+        height: 6.8vh;        
+    }
+    h1{
+        margin: 0.5rem 0;
+        font-size: 1.6rem;
+    }
+    .header div{
+        font-size: 1.333rem;
+    }
 }
