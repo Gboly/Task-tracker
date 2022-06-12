@@ -46,7 +46,7 @@ h3{
     opacity: 0.8;
 }
 form{
-    height: 8vh;
+    height: 4.4rem;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;    
@@ -94,7 +94,7 @@ ul{
     flex-flow: column nowrap; 
 }
 li{
-    height: 8vh;
+    height: 4.4rem;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;    
@@ -149,7 +149,7 @@ li h3{
 }
 .footer{
     text-align: center;
-    padding-bottom: 7vh;
+    padding-bottom: 2vh;
 }
 
 /* Mode */
@@ -358,7 +358,7 @@ li h3{
         margin: auto 5vw;
     }
     form, li{
-        height: 7.2vh;
+        height: 4rem;
     }
     .bottom{
         height: 7vh;
@@ -376,24 +376,7 @@ li h3{
         font-size: 0.8rem;
     }
 }
-/* @media screen and (max-width: 560px) {
-    h1{
-        margin: 3vh 0;
-    }
-    form input{
-        font-size: 1.1rem;        
-    }
-    li h3{
-        font-size: 1.2rem;
-    }
-    form, li{
-        height: 7vh;
-    }
-    .bottom{
-        height: 7vh;
-    }
 
-} */
 @media screen and (max-width: 480px) {
     h1{
         margin: 2vh 0;
@@ -411,10 +394,13 @@ li h3{
     .bottom span:first-of-type, .bottom span:last-of-type{
         font-size: 0.8rem;
     }
+    form, li{
+        height: 3.7rem;
+    }
 }
 @media screen and (max-width: 375px) {
     form, li{
-        height: 6vh;
+        height: 3.4rem;
     }
     .bottom{
         height: 6.8vh;        
@@ -425,5 +411,25 @@ li h3{
     }
     .header div{
         font-size: 1.333rem;
+    }
+    .footer{
+        font-size: 0.8rem;
+    }
+    #All{
+        margin-left: 11vw;        
+    }
+    #Completed{
+        margin-right: 11vw;
+    }
+}
+@media screen and (max-width: 280px) {
+    #All{
+        margin-left: 9vw;        
+    }
+    #Completed{
+        margin-right: 9vw;
+    }
+    h1{        
+        font-size: 1.25rem;
     }
 }

@@ -14,7 +14,7 @@ function Actions(props){
     function info(){
         return activeFilter === "All" 
         ? props.listLength === 0 
-        ? "Add an item" 
+        ? "Add item" 
         : `${props.activeLength} item${props.activeLength > 1 ? "s" : ""} left`
         : activeFilter === "Active"
         ? props.activeLength === 0
