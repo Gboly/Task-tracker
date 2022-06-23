@@ -45,6 +45,7 @@ export default function Tasks(props){
     function handleDragEnd(){
         setIsDragging(false);
         dragItem.current = null;
+        props.dragEndToDB();
         dragNode.current.removeEventListener("dragend", handleDragEnd);
         dragNode.current = null;
     }
@@ -52,7 +53,7 @@ export default function Tasks(props){
     return  <div className={`main ${props.mode ? "main-light" : "main-dark" }`} ><ul id="main-body" >
     
     {(filter === "All" ? list : filter === "Completed" ? completed : filter === "Active" && active).map(
-        ({clicked,text,id},index) =>
+        ({clicked,text,_id:id},index) =>
             <TaskBlock key={id}
                 task={text}
                 clicked={clicked}

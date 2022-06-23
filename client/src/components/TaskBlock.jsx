@@ -51,7 +51,8 @@ function TaskBlock(props){
                  isDragging={props.isDragging}
                  dragItem={props.dragItem}
                  index={props.index}
-                 uid={props.uid} />
+                 uid={props.uid}
+                 clicked={props.clicked} />
                 <Task task={props.task} strike={props.clicked} mode={props.mode} isDragging={props.isDragging} dragItem={props.dragItem} index={props.index} />
                 <Delete visibility={visibility} task={props.task} deleteTask={props.deleteTask} mode={props.mode} uid={props.uid} />
             </li>

@@ -15,7 +15,7 @@ function Form(props){
         e.preventDefault();        
     }
 
-    return <form className={props.mode ? "form-light" : "form-dark" } >
+    return <form className={`form ${props.mode ? "form-light" : "form-dark"}`} >
     <button type="submit" onClick={updateTask}><div className={`submit ${props.mode ? "submit-light" : "submit-dark"}`} ></div></button>
     <input className={props.mode ? "form-input-light" : "form-input-dark"} onChange={updateInput} type="text" placeholder="Create a new todo..." value={input} autoFocus />     
 </form>

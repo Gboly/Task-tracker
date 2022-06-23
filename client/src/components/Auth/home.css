@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+    background: radial-gradient( rgba(233, 189, 255, 0.4),#fff);
+    font-family: 'Josefin Sans', sans-serif;
+}
+#home-content{
+    height: 75vh;
+    width: 80vw;
+    margin: 3em 10vw;
+    background: radial-gradient( rgba(71, 218, 255,0.2),#fff);
+    /* box-shadow: 1.5px 1.5px 20px rgba(0,0,0,0.4); */
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5em; 
+}
+#brand-name{
+    width: 10.5em;
+    height: 6em;
+    line-height: 2;
+    font-family: 'Courgette', cursive;
+    font-size: 1.5em;
+    letter-spacing: 0.5rem;
+}
+#brand-name::first-letter{
+    font-size: 7em;    
+    font-family: 'Pacifico', cursive;
+    color: gray;
+    float: left;
+    line-height: 1;
+    margin-top: -5.5vh;
+
+}
+#brand-story{
+    width: 10.2em;
+    margin-top: 2em;
+    font-weight: 500;
+    font-size: larger;
+}
+.home-button{
+    border: none;
+    padding: 0.5em 1.2em;
+    background-color: rgba(71, 218, 255,0.3);
+    border-radius: 5em;
+    margin-top: 2em;
+    font-weight: 500;
+    
+}
+.login-button{
+    padding: 0.5em 1.5em;
+    background-color: rgba(233, 189, 255, 0.4);
+}
+.home-button:hover{
+    background-color: rgba(71, 218, 255,0.15);
+}
+.login-button:hover{
+    background-color: rgba(233, 189, 255, 0.2);
+}
+#home-button-container{
+    width: 11.8em;
+    display: flex;
+    justify-content: space-between;
+}

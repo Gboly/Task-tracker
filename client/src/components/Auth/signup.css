@@ -1,0 +1,85 @@
+body{
+    margin: 0;
+    background: radial-gradient( rgba(233, 189, 255, 0.4),#fff);
+    font-family: 'Josefin Sans', sans-serif;
+    
+}
+#content{
+    height: 75vh;
+    width: 80vw;
+    margin: 2em 10vw;
+    background: radial-gradient( rgba(71, 218, 255,0.1), white);
+    /* box-shadow: 1.5px 1.5px 20px rgba(0,0,0,0.4); */
+    border-radius: 10px;
+        /* display: flex;
+        flex-flow: column nowrap;
+        align-items: center; */
+        display: block;
+        text-align: center;          
+        position: relative;
+        padding: 1em ;
+}
+#signup-h3{
+    font-weight: 600;
+    margin-bottom: 3vh;
+    font-size: 2em;
+}
+#h3{
+    font-weight: 600;
+    margin-bottom: 3vh;
+    font-size: 2em;
+}
+#form div{
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: left;
+    margin-bottom: 3vh;
+    color: gray;
+}
+#button{
+    border: none;
+    padding: 0.5em 1em;
+    background-color: rgba(71, 218, 255,0.3);
+    border-radius: 5em;   
+    font-weight: 500;    
+}
+#button:hover{
+    background-color: rgba(71, 218, 255,0.15);
+}
+.input{
+    outline: none;
+    border-style: none none solid none;
+    background-color: inherit;
+    border-color: gray;
+    border-width: 1px;
+}
+.input:focus{
+    border-color: black;
+}
+#p2{
+    margin-top: 1.5em;
+}
+#icons i{
+    margin: 0 0.3em;
+    color: #4267B2;
+    font-size: 2em;
+}
+#icons i:last-of-type{
+    color: #DB4437;
+    font-size: 2em;
+}
+.p1{
+    color: red;
+    text-align: left;
+}
+.password{
+    position: relative;
+}
+.password i{
+    position: absolute;
+    right: 2vw;
+    bottom: 0.1vh;
+}
+.username{
+    margin-bottom: 5vh;
+}
