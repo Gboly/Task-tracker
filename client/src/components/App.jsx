@@ -26,14 +26,14 @@ function App({bodyNode}){
     }, [setNewtasks, tasks])
 
     useEffect(()=>{
-        fetch("/home")
+        fetch("/todo/home")
         .then(res=>res.json())
         .then(tasks=>setTasks([...tasks]))
         .catch(e=>console.log(e))
     },[])
 
     function updateTasks(task, uuid){       
-        fetch("/getFormInput",{
+        fetch("/todo/getFormInput",{
             method: "POST",
             headers:{
                 "Content-Type": "application/json"
@@ -50,7 +50,7 @@ function App({bodyNode}){
     }
 
     function updateClick(uid, clicked){
-        fetch("/updateCompleted",{
+        fetch("/todo/updateCompleted",{
             method: "PATCH",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({uid, clicked})
@@ -61,7 +61,7 @@ function App({bodyNode}){
     }
 
     function deleteTask( uid ){
-        fetch("/delete",{
+        fetch("/todo/delete",{
             method: "DELETE",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({uid})
@@ -82,7 +82,7 @@ function App({bodyNode}){
     }
 
     function dragEndToDB(){
-        fetch("/refactor",{
+        fetch("/todo/refactor",{
             method: "PUT",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({refactoredTasks: tasksRef.current})
@@ -94,7 +94,7 @@ function App({bodyNode}){
     }
     
     function clearCompleted(){
-        fetch("/clearCompleted",{
+        fetch("/todo/clearCompleted",{
             method:"DELETE"
         })
         .then(res=>res.json())
@@ -103,7 +103,7 @@ function App({bodyNode}){
     }
     
     function handleLogOut(){
-        fetch("auth/local/logout")
+        fetch("/auth/local/logout")
         .then(res=>res.json())
         .then(({error})=>{
             if(!error){window.location.replace("/")}
