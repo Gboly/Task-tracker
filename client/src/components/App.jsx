@@ -13,8 +13,7 @@ function App({bodyNode}){
     
     const [newTasks, setNewtasks] = useState(tasks) 
     
-    const tasksRef = useRef()
-    const navigate = useNavigate()
+    const tasksRef = useRef()   
 
     useEffect(()=>{
         document.body.className = "html-light";

@@ -34,7 +34,7 @@ function Actions(props){
     <span onClick={()=>setFilter("Active")} id="Active" className={activeFilter === "Active" ? "active-filter-option" : "filter-option"} >Active</span>
     <span onClick={()=>setFilter("Completed")} id="Completed" className={activeFilter === "Completed" ? "active-filter-option" : "filter-option"} >Completed</span>
     </span>
-    <span onClick={delCompleted} id="Clear completed" className="filter-option" > Clear completed</span>  
+    <span onClick={delCompleted} id="Clear completed" className="filter-option" > Clear completed</span> 
     </div>
 }
 

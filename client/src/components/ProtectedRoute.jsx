@@ -2,7 +2,7 @@ import {useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 
-export default function ProtectedRoute({children}){
+export default function ProtectedRoute({children, mqy}){
 
     const [isAuth, setIsAuth] = useState(false)
     
@@ -19,10 +19,10 @@ export default function ProtectedRoute({children}){
         .then(res=>res.json())
         .then(result=> result 
             ? setIsAuth(true)
-            : navigate("/login")
+            : navigate(mqy ? "/" : "/login")
             )
         .catch(e=>console.log(e))
-    },[navigate, setIsAuth, location])
+    },[navigate, setIsAuth, location, mqy])
 
     return <>
         {isAuth && children }

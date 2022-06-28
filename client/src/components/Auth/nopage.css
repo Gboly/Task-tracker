@@ -1,0 +1,95 @@
+.container404{
+    box-sizing: border-box;    
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.flexContainer404{
+    box-sizing: border-box;
+    width: 22em;
+    height: 30em;
+    padding: 6.5%;
+    background-color: #fff;
+    box-shadow: 1px 1px 15px rgba(0,0,0,0.1);
+    border-radius: 1em;
+}
+.h1404{
+    font-size: 4em;
+    font-family: 'Rubik Moonrocks', cursive;
+    letter-spacing: 1em;
+    color: rgba(71, 218, 255,0.5);       
+}
+.h2404{
+    font-weight: 550;
+    font-size: 1.5em;
+    margin: 1em 0 1em;
+}
+.p404{
+    font-size: 1.2em;
+    margin-bottom: 0;
+}
+.button404 img{
+    height: 2rem;    
+}
+.button404{
+    border-radius: 0.5em;    
+    border-color: rgba(71, 218, 255,0.3);
+}
+.button404:focus{
+    outline: none;
+}
+.div-btn404, .description404{       
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    width: 16em;
+    margin-left: 0.5em;
+}
+.visibility{
+    visibility: visible;
+}
+.description404 span{    
+    background-color: rgba(0, 0, 0, 1);
+    color: white;    
+    padding: 0 0.5em;
+    border-radius: 0.5em;
+}
+.nav404{
+    position: absolute;
+}
+
+@media screen and (max-width: 320px) {
+    .flexContainer404{
+        width: 18em;
+    }
+    .h1404{
+        font-size: 3.8em;
+    }
+}
+@media screen and (min-width: 640px) {
+    .flexContainer404{
+        width: 35em;
+        position: relative;       
+    }
+    .contentContainer404{
+        position: absolute;
+        left: 50%;
+        bottom: 15%;
+        transform: translateX(-50%);
+    }
+}
+@media screen and (min-width: 800px) {
+    .flexContainer404{
+        width: 40em;        
+    }  
+}
+@media screen and (min-width: 960px) {
+    .flexContainer404{
+        width: 45em;        
+    }
+}

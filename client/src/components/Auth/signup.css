@@ -1,19 +1,19 @@
+html{
+    max-width: 100%;
+    overflow-x: hidden;
+}
 body{
     margin: 0;
     background: radial-gradient( rgba(233, 189, 255, 0.4),#fff);
     font-family: 'Josefin Sans', sans-serif;
-    
+    width: 100%;
+    max-width: 100%;
 }
 #content{
-    height: 75vh;
-    width: 80vw;
-    margin: 2em 10vw;
-    background: radial-gradient( rgba(71, 218, 255,0.1), white);
-    /* box-shadow: 1.5px 1.5px 20px rgba(0,0,0,0.4); */
-    border-radius: 10px;
-        /* display: flex;
-        flex-flow: column nowrap;
-        align-items: center; */
+    height: 75vh;    
+    margin: 2em 2.2em;
+    background: radial-gradient( rgba(71, 218, 255,0.1), white);    
+    border-radius: 10px;       
         display: block;
         text-align: center;          
         position: relative;
@@ -34,26 +34,29 @@ body{
     flex-flow: column nowrap;
     text-align: left;
     margin-bottom: 3vh;
-    color: gray;
+    color: gray;    
 }
 #button{
     border: none;
     padding: 0.5em 1em;
     background-color: rgba(71, 218, 255,0.3);
     border-radius: 5em;   
-    font-weight: 500;    
+    font-weight: 500;
+    outline: none;
 }
 #button:hover{
     background-color: rgba(71, 218, 255,0.15);
+    outline: none;
 }
 .input{
     outline: none;
-    border-style: none none solid none;
+    border-style: none none solid;
     background-color: inherit;
     border-color: gray;
     border-width: 1px;
 }
 .input:focus{
+    border-width: 1.2px;
     border-color: black;
 }
 #p2{
@@ -65,8 +68,14 @@ body{
     font-size: 2em;
 }
 #icons i:last-of-type{
-    color: #DB4437;
-    font-size: 2em;
+    color: #DB4437;     
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+a:hover{
+    color: inherit
 }
 .p1{
     color: red;
@@ -77,9 +86,55 @@ body{
 }
 .password i{
     position: absolute;
-    right: 2vw;
-    bottom: 0.1vh;
+    right: 0.3em;
+    bottom: 0em;
 }
 .username{
     margin-bottom: 5vh;
 }
+@media screen and (min-width: 599px) {
+    #button{       
+        padding: 0.5em 1.1em;        
+        border-radius: 0.5em;        
+        font-size: 1.2em;    
+    }
+    #content{
+        height: 80vh;       
+        margin: 2em 10vw;
+    }   
+    .login-div:last-of-type{
+        margin-top: 2em;        
+    } 
+}
+
+@media screen and (min-width: 958px) { 
+    .signup1{
+        display: inline;
+    } 
+    #content{
+        height: 85vh;
+        width: 34vw;
+        margin: 0;
+        padding-top: 2em;
+    }
+    #form div{
+        font-size: 1.2em;
+    }
+    #p2{
+        font-size: 1.2em;
+    }
+    #icons i{
+        margin: 0 0.3em;        
+        font-size: 2.2em;
+    }
+}
+
+@media screen and (min-width: 1278px) { 
+    #content{
+        width: 29vw;
+    }
+    #form div{
+        font-size: 1.4em;
+    }
+}
+
